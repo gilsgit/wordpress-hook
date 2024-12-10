@@ -1,0 +1,15 @@
+function wpb_hook_javascript_footer() {
+    ?>
+        <script>
+          const vat = document.querySelector(".cart_totals .table_quote_totals");
+			d = vat.getElementsByTagName("tr")[1]
+			h = d.getElementsByTagName("th")[0]
+			h.innerHTML = "Hst";
+		d.style.backgroundColor = 'red';
+		
+		console.log("hello")
+		// vat.innerHTML = "<th>HST </th>";
+        </script>
+    <?php
+}
+add_action('wp_footer', 'wpb_hook_javascript_footer');
